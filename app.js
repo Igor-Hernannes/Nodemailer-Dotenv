@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const porta = 3000;
+const dotenv = require("dotenv").config()
 
 //indicação de pasta de aruivos estáticos - css, js, img 
 app.use(express.static("./app/public"));
@@ -27,7 +27,8 @@ app.use("/", rota);
 // http://localhost:3000
 
 //iniciar o servidor
-app.listen(porta, ()=>{
-    console.log(`Servidor on-line \nhttp://localhost:${porta}`)
-})
+app.listen(process.env.APP_PORT, ()=>{
+    console.log(`Servidor ouvindo na porta ${process.env.APP_PORT}
+        \nhttp://localhost:${porta}`);
+});
 
