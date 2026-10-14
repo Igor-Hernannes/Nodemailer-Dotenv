@@ -38,13 +38,13 @@ let transporter = nodemailer.createTransport({
 });
  
 const mailOptions = {
-  from: "",
-  to: "",
-  subject: "",
-  text: "",
-  html: ""
+  from: "igorhmac@gmail.com",
+  to: "igorhmac@gmail.com",
+  subject: "Formulário",
+  text: "mensagem em formato de texto",
+  html: "<h1>mensagem em formato HTML</h1>"
 };
  
-transporter.sendMail
+transporter.sendMail()
  
 module.exports = router;
