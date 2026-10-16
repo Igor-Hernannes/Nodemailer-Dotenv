@@ -31,24 +31,26 @@ router.post(
 const transporter = nodemailer.createTransport({
 service: 'gmail',
 auth: {
-},
-user: process.env.igorhmac@gmail.com, // seu e-mail Gmail
 
-pass: process.env.rrpxigfbzdtfkfil // senha de app (não a senha da conta)
+user: process.env.EMAIL_USER, // seu e-mail Gmail
+
+pass: process.env.EMAIL_PASS // senha de app (não a senha da conta)
+},
 
 tls: {
 
 secure: false,
 ignoreTLS: true,
 rejectUnauthorized: false, // ignorar certificado digital APENAS EM DESENVOLVIMENTO
+}
 
 });
  
 const mailOptions = {
   from: "igorhmac@gmail.com",
   to: "igorhmac@gmail.com",
-  subject: "Formulário",
-  text: "mensagem em formato de texto",
+  subject: "assunto",
+  text: "mensaagem em formato de texto",
   html: "<h1>mensagem em formato HTML</h1>"
 };
  
@@ -70,3 +72,4 @@ console.log("email enviado");
 });
  
 module.exports = router;
+
